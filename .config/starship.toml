@@ -1,0 +1,32 @@
+add_newline = true
+
+[git_branch]
+symbol = "git:\\("
+format = "[$symbol$branch$remote_branch\\)]($style) "
+
+[git_commit]
+tag_symbol = " COMMIT-TAG "
+
+[git_state]
+rebase = "REBASING"
+merge = "MERGING"
+revert = "REVERTING"
+cherry_pick = "CHERRY-PICK"
+bisect = "BISECT"
+am = "AM"
+am_or_rebase = "AM/REBASE"
+
+[git_status]
+conflicted = " conflicted "
+ahead = " ahead "
+behind = " behind "
+diverged = " diverged "
+up_to_date = " up-to-date "
+untracked = " untracked "
+stashed = " stashed "
+modified = " modified "
+staged = " staged "
+renamed = " renamed "
+deleted = " deleted "
+typechanged = " typechanged "
+

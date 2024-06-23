@@ -1,0 +1,100 @@
+take 12 $ f [1..]
+take 12 $ f [1..]
+let f = filter even . map (^2)
+let f n = filter even . map (^2) n
+let x = filter even . map (^2)
+let x = filter even . map (^2) [1..]
+clear
+map (^2) [1..]
+clear
+parseDeadFish "iiiisoiiiiio"
+parseDeadFish "iiiiso"
+parseDeadFish "iiiis"
+parseDeadFish "iiiio"
+parseDeadFish "iiii0"
+parseDeadFish " 0
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddo
+dddddddddddddddddddddsddoddddddddoiiioddddddoddddddddo
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddoddddddddddddo
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddoiiisdsiiiiiiiioiiiiiiiiiiiiiiiiiiiiiiiiiiiiioiiiiiiiooiiio
+dddddddddddddddddddddsddoddddddddoiiioddddddoddddddddo
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddoddddddddddddo
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddoiiisdsiiiiiiiioiiiiiiiiiiiiiiiiiiiiiiiiiiiiioiiiiiiiooiiio
+dddddddddddddddddddddsddoddddddddoiiioddddddoddddddddo
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddoddddddddddddo
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddoiiisdsiiiiiiiioiiiiiiiiiiiiiiiiiiiiiiiiiiiiioiiiiiiiooiiio
+dddddddddddddddddddddsddoddddddddoiiioddddddoddddddddo
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddoddddddddddddo
+iiisdsiiiiiiiioiiiiiiiiiiiiiiiiiiiiiiiiiiiiioiiiiiiiooiiio
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddo
+dddddddddddddddddddddsddoddddddddoiiioddddddoddddddddo
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddoddddddddddddo
+a = "iiisdsiiiiiiiioiiiiiiiiiiiiiiiiiiiiiiiiiiiiioiiiiiiiooiiio"
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddo
+dddddddddddddddddddddsddoddddddddoiiioddddddoddddddddo
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddoddddddddddddo
+input = "iiisdsiiiiiiiioiiiiiiiiiiiiiiiiiiiiiiiiiiiiioiiiiiiiooiiio"
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddo
+dddddddddddddddddddddsddoddddddddoiiioddddddoddddddddo
+dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddoddddddddddddo
+parseDeadFish "iiisdsiiiiiiiioiiiiiiiiiiiiiiiiiiiiiiiiiiiiioiiiiiiiooiiio" 0
+parseDeadFish "a" 0
+parseDeadFish "asdasdasd"
+parseDeadFish "iiiiio" 0
+underFlowAcc 3 1
+underFlowAcc 1 1
+underFlowAcc 0 1
+Node Int
+Tree Int
+round 6.6
+round (9.4 - 3.6)
+round (7.0 - 3.6)
+round (7/0 - 3.6)
+round (4.7 - 3.6)
+round (3.6 - 3.5)
+round 1.2
+round 1.1
+round 1
+take 10 $ findMultiples 4
+take 10 $ findMultiples 3
+take 10 $ findMultiples 2
+take 10 $ findMultiples 1
+take 10 $ findMultiples 8
+take 10 $ findMultiples 8
+findMultiples 8
+take 10 $ f 8
+let f n = [ x*n | x <- [1..]] 
+findFactors 5
+:r
+:t findFactors 6
+:t fromIntegral 
+:t fromRational 
+:t findFactors 6
+:t fromIntegral
+:t fromInteger
+:t findFactors 6
+findFactors 6
+:t fromIntegral 
+;t fromIntegral 
+fromInteg
+:t findFactors 6
+findFactors 6
+map round $ findFactors 6
+:t round
+:t findFactors 6
+:t roind
+findFactors 6
+:t round
+:t roind
+:t fromInteger
+:t fromInteg
+div 2 / 1
+:t div
+div a b
+a / b
+b = 1 :: Int
+a = 1 :: Int
+1 / 1
+1 /1 1
+:r
+isInteger 3.2

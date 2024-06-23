@@ -1,0 +1,4 @@
+#!/bin/sh
+# Wrapper for python311/python 3.11 to just python
+
+python3.11 "$@"

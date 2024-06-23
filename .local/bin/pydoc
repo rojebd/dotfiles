@@ -1,0 +1,4 @@
+#!/bin/sh
+# Wrapper for pydoc311/pydoc3.11 to just pydoc
+
+pydoc3.11 "$@"

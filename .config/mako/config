@@ -1,0 +1,28 @@
+# Sort Notifications by Ascending Priority
+sort=+priority
+
+# Font
+font=Dejavu 10
+
+# Width and Height
+width=350
+height=250
+
+# Timeout
+default-timeout=10000
+
+# Colors
+background-color=#504945
+text-color=#ebdbb2
+border-color=#458588
+
+# Border
+border-size=2
+border-radius=2
+
+# Visible
+max-visible=3
+
+# Icons
+# icon-location=top
+max-icon-size=32

@@ -1,0 +1,98 @@
+####### Plugins Installed
+#	- SmartTab.kak 	 = https://github.com/andreyorst/smarttab.kak
+# 	- Buffers.kak  	 = https://github.com/Delapouite/kakoune-buffers/
+# 	- Auto-Pairs.kak = https://github.com/alexherbo2/auto-pairs.kak
+
+#set-option global ui_options terminal_status_on_top=yes
+set-option -add global ui_options terminal_assistant=none
+set-option -add global ui_options terminal_enable_mouse=false
+set-option global tabstop 4
+set-option global indentwidth 4
+set-option global scrolloff 8,3
+add-highlighter global/ number-lines -hlcursor -relative -separator "  " -cursor-separator " |"
+add-highlighter global/ show-matching
+set-option global startup_info_version 9999999999
+colorscheme gruber-darker
+
+hook global BufOpenFile .* noexpandtab
+hook global BufNewFile  .* noexpandtab
+hook global WinSetOption filetype=haskell %{
+	# Seems like softabstop can't be set globallly?
+	# so I do it for the current haskell buffer
+	set-option buffer softtabstop 2
+	set-option buffer tabstop 2
+	set-option buffer indentwidth 2
+	expandtab
+}
+
+hook global WinSetOption filetype=hare %{
+	set-option buffer softtabstop 8
+	set-option buffer tabstop 8
+	set-option buffer indentwidth 8
+	colorscheme gruber-darker-hare
+	expandtab
+}
+
+# Simple Fuzzy Finder
+def fuzzy-finder -params 1 -shell-script-candidates %{ find . -type f | grep -v -E "^(\./\.git/|\./\.local/|\./\.cache/|\./\.ssh/|\./\.dbus/|\./stuff/other/python-3.12.2-docs-html|\./stuff/books|\./\.pki)" | cut -c 3- } %{ edit %arg{1} }
+
+map global user f ":fuzzy-finder " -docstring "Open fuzzy finder"
+map global normal <c-v> ":comment-line<ret>"
+map global normal <esc> ";,:info -style modal<ret>"
+map global normal <left>  ":nop<ret>"
+map global normal <right> ":nop<ret>" 
+map global normal <up>    ":nop<ret>"
+map global normal <down>  ":nop<ret>"
+# ClipBoard (used to be user, normal -> user)
+# map global normal P '!wl-paste -n -p<ret>'
+# map global normal p '<a-!>wl-paste -p<ret>'
+# map global normal R '|wl-paste -n -p<ret>'
+# map global normal y '<a-|>wl-copy -n -p<ret>'
+map global normal P '!wl-paste -n <ret>'
+map global normal p '<a-!>wl-paste <ret>'
+map global normal R '|wl-paste -n <ret>'
+map global normal y '<a-|>wl-copy -n <ret>'
+map global user h ':buffer-next<ret>' -docstring "Go to next Buffer"
+map global user l ':buffer-previous<ret>' -docstring "Go to previous Buffer"
+
+set-option global auto_pairs ( ) { } [ ] '"' '"' "'" "'" ` ` “ ” ‘ ’ « » ‹ ›
+enable-auto-pairs
+
+# Shades of green/yellow for insert mode.
+hook global ModeChange (push|pop):.*:insert %{
+    set-face window PrimarySelection white,green+b
+    set-face window SecondarySelection black,green+b
+    set-face window PrimaryCursor black,bright-yellow+b
+    set-face window SecondaryCursor black,bright-green+b
+    set-face window PrimaryCursorEol black,bright-yellow
+    set-face window SecondaryCursorEol black,bright-green
+}
+
+# Undo colour changes when we leave insert mode.
+hook global ModeChange (push|pop):insert:.* %{
+    unset-face window PrimarySelection
+    unset-face window SecondarySelection
+    unset-face window PrimaryCursor
+    unset-face window SecondaryCursor
+    unset-face window PrimaryCursorEol
+    unset-face window SecondaryCursorEol
+}
+
+hook global WinDisplay .* info-buffers
+map global user b ':info-buffers<ret>' -docstring "Show active buffers" 
+
+hook global InsertCompletionShow .* %{
+    try %{
+        # this command temporarily removes cursors preceded by whitespace;
+        # if there are no cursors left, it raises an error, does not
+        # continue to execute the mapping commands, and the error is eaten
+        # by the `try` command so no warning appears.
+        execute-keys -draft 'h<a-K>\h<ret>'
+        map window insert <tab> <c-n>
+        map window insert <s-tab> <c-p>
+        hook -once -always window InsertCompletionHide .* %{
+            unmap window insert <tab> <c-n>
+            unmap window insert <s-tab> <c-p>
+        }
+    }
+}

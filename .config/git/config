@@ -1,0 +1,21 @@
+[user]
+	name = rojebd
+	email = roniellberrios@gmail.com
+	signingkey = 83179E2C17E9A233
+
+# Enforce SSH
+; [url "ssh://git@github.com/"]
+;   insteadOf = https://github.com/
+; [url "ssh://git@gitlab.com/"]
+;   insteadOf = https://gitlab.com/
+; [url "ssh://git@bitbucket.org/"]
+;   insteadOf = https://bitbucket.org/
+
+[gpg]
+	program = /usr/local/bin/gpg
+[commit]
+	gpgsign = true
+[push]
+	autoSetupRemote = true
+[core]
+	editor = kak
