@@ -1,0 +1,15 @@
+#!/bin/sh
+
+if [ "$1" = "-whole-screenshot" ]; then
+    grim screenshot.png
+elif [ "$1" = "-part-screenshot" ]; then
+    slurp | grim -g - screenshot.png
+elif [ "$1" = "-part-paste" ]; then
+    slurp | grim -g - - | wl-copy
+elif [ "$1" = "-whole-video" ]; then
+    wf-recorder -f recording.mp4
+elif [ "$1" = "-part-video" ]; then
+    wf-recorder --audio --file=recording.mp4 -g "$(slurp)"
+else
+    exit 1
+fi

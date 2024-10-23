@@ -1,0 +1,31 @@
+# Fonts
+font=JetBrainsMono Nerd Font
+font-size=13
+
+# Theming
+background-color=#1d2021
+outline-width=1
+border-width=2
+border-color=#458588
+text-color=#FFFFFF
+prompt-text="Launch: "
+
+fuzzy-match=true
+
+selection-color=#282828
+selection-match-color=#fb4934
+selection-background=#FFFFFF
+selection-padding=12
+selection-background-corner-radius=3
+
+anchor=top
+
+width=500
+height=350
+corner-radius=4
+anchor-position=center
+
+text-cursor=true
+text-cursor-style=bar
+text-cursor-corner-radius=2
+text-cursor-thickness=1.5

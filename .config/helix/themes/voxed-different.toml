@@ -1,0 +1,2 @@
+inherits = "voxed"
+"ui.cursorline.primary" = { bg = "#353535" }
