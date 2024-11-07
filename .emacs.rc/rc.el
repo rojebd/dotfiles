@@ -30,4 +30,13 @@
     (move-beginning-of-line 1)
     (forward-char column)))
 
+(defun rc/open-file-vertically ()
+  (interactive)
+  (let ((file (ido-read-file-name "Select file: "))) ;; Prompt for a file
+    (if file
+        (progn
+          (split-window-right)
+          (other-window 1)
+          (find-file file)))))
 
+(provide 'rc)

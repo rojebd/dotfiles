@@ -1,0 +1,3 @@
+#!/bin/sh
+
+python coding/python/command-watcher/main.py "$@"
