@@ -16,9 +16,6 @@
 (require 'ansi-color)
 (add-hook 'compilation-filter-hook 'ansi-color-compilation-filter)
 
-; Odin mode
-(require 'odin-mode)
-
 ; Set emacs custom file location to output (custom-variables)
 (setq custom-file "~/.emacs.custom.el")
 (load custom-file)
