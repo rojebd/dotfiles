@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export GPG_SIGN_KEY:\x1d
-SETUVAR --export --path HAREPATH:/usr/src/hare/stdlib\x1e/usr/src/hare/third\x2dparty\x1e/home/roniell/sources
+SETUVAR --export --path HAREPATH:/usr/src/hare/stdlib\x1e/usr/src/hare/third\x2dparty\x1e/home/roniell/sources/hare\x2draylib
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR autovenv_announce:yes
