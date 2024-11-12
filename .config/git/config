@@ -3,12 +3,14 @@
 	email = roniellberrios@gmail.com
 	signingkey = 58B85300A44C1CCF3EFA937C83179E2C17E9A233!
 # Enforce SSH
+# Disable this when installing a new emacs tree-sitter grammar
 [url "ssh://git@github.com/"]
   insteadOf = https://github.com/
 [url "ssh://git@gitlab.com/"]
   insteadOf = https://gitlab.com/
 [url "ssh://git@bitbucket.org/"]
   insteadOf = https://bitbucket.org/
+
 [commit]
 	gpgsign = true
 [push]

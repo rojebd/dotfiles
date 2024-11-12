@@ -13,19 +13,25 @@
   (setq exec-path (append exec-path '("/home/roniell/.local/bin")))
   (load custom-file)
   (global-display-line-numbers-mode 1)
-  (set-frame-font "Hack Nerd Font Mono-16")
+  (set-frame-font "Hack Nerd Font Mono-15")
   (setenv "PATH" (concat (getenv "PATH") ":/home/roniell/.local/bin"))
+
+  ; Rebind C-w to kill-word-backwards
+  (global-set-key (kbd "C-w") 'backward-kill-word)
   
+  ; Rebind kill-region to C-x C-k
+  (global-set-key (kbd "C-x C-k") 'kill-region)
+
   ; NOTE: This makes the normal C-x 3 not work
-  (define-key global-map (kbd "C-x 3") 
+  (define-key global-map (kbd "C-x 3")
   (let ((map (make-sparse-keymap)))
 	(define-key map (kbd "C-f") 'rc/open-file-vertically)
 	map)))
 
-(use-package srcery-theme
+(use-package gruvbox-theme
   :ensure t
   :config
-  (load-theme 'srcery t))
+  (load-theme 'gruvbox t))
 
 (use-package smex
   :ensure t

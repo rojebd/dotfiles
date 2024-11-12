@@ -21,6 +21,7 @@ def count_windows(group, include_floating=True):
 
 class Tab:
     """A tab representing a window."""
+
     def __init__(self, window):
         self.window = window
         self._left = 0
@@ -168,7 +169,7 @@ class Tabbed(_SimpleLayoutBase):
                 screen_rect.height - self.border_width * 2,
                 self.border_width,
                 self.border_focus if client.has_focus else self.border_normal,
-                margin=self.margin
+                margin=self.margin,
             )
             client.unhide()
         else:
@@ -227,8 +228,7 @@ class Tabbed(_SimpleLayoutBase):
                 self._panel.hide()
         else:
             if self.place_bottom:
-                body, panel = screen_rect.vsplit(screen_rect.height -
-                                                 self.bar_height)
+                body, panel = screen_rect.vsplit(screen_rect.height - self.bar_height)
             else:
                 panel, body = screen_rect.vsplit(self.bar_height)
             self._resize_panel(panel)
@@ -260,8 +260,7 @@ class Tabbed(_SimpleLayoutBase):
             return
 
         if self.place_bottom:
-            _, panel = screen_rect.vsplit(screen_rect.height -
-                                          self.bar_height)
+            _, panel = screen_rect.vsplit(screen_rect.height - self.bar_height)
         else:
             panel, _ = screen_rect.vsplit(self.bar_height)
         self._resize_panel(panel)
@@ -277,13 +276,15 @@ class Tabbed(_SimpleLayoutBase):
             self._drawer.width = screen_rect.width
         self._drawer.clear(self.bg_color)
         self._layout = self._drawer.textlayout(
-            "", "#ffffff", self.font, self.fontsize, self.fontshadow,
-            wrap=False
+            "", "#ffffff", self.font, self.fontsize, self.fontshadow, wrap=False
         )
 
     def _create_panel(self, screen_rect):
         self._panel = self.group.qtile.core.create_internal(
-            screen_rect.x, screen_rect.y, screen_rect.width, self.bar_height,
+            screen_rect.x,
+            screen_rect.y,
+            screen_rect.width,
+            self.bar_height,
         )
         self._create_drawer(screen_rect)
         self._panel.process_window_expose = self.draw_panel
