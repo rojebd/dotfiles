@@ -1,45 +1,46 @@
-; Completion
-(rc/require 'corfu)
-(global-corfu-mode)
-(setq-default corfu-auto nil)
-(rc/require 'cape)
-(add-hook 'completion-at-point-functions #'cape-dabbrev)
-(add-hook 'completion-at-point-functions #'cape-file)
-(define-key corfu-map (kbd "RET") nil)
-(define-key corfu-map (kbd "S-<return>") 'corfu-insert)
+(use-package emacs
+  :bind (("C-," . rc/duplicate-line)
+		 ("M-p" . move-text-up)
+		 ("M-n" . move-text-down))
+  :hook ((after-change-major-mode . rc/hare-setup)
+		 (after-change-major-mode . rc/python-setup))
+  :config
+  (electric-pair-mode t)
+  (setq-default backward-delete-char-untabify-method nil)
+  (setq-default indent-tabs-mode t)
+  (setq-default tab-width 4))
 
-; Electric Pair Mode (autocompletes matching delimeters like parentheses)
-(electric-pair-mode t)
+(use-package corfu
+  :ensure t
+  :init
+  (global-corfu-mode)
+  :bind (:map corfu-map
+		  ("RET" . nil)
+		  ("S-<return>" . corfu-insert))
+  :config
+  (setq-default corfu-auto nil))
 
-; Indent Guides
-(rc/require 'highlight-indent-guides)
-(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
-(setq highlight-indent-guides-method 'character)
-(setq highlight-indent-guides-auto-character-face-perc 55)
-(setq highlight-indent-guides-responsive "top")
-(defun my-highlighter (level responsive display)
-  (if (> 1 level)
-      nil
-    (highlight-indent-guides--highlighter-default level responsive display)))
+(use-package cape
+  :ensure t
+  :init
+  (add-hook 'completion-at-point-functions #'cape-dabbrev)
+  (add-hook 'completion-at-point-functions #'cape-file))
 
-(setq highlight-indent-guides-highlighter-function 'my-highlighter)
+(use-package highlight-indent-guides
+  :ensure t
+  :hook (prog-mode . highlight-indent-guides-mode)
+  :config
+  (setq highlight-indent-guides-method 'character)
+  (setq highlight-indent-guides-auto-character-face-perc 55)
+  (setq highlight-indent-guides-responsive "top")
+  (setq highlight-indent-guides-highlighter-function 'rc/highlighter))
 
-; Indentation
-; Emacs by default uses tabs
-; (setq tab-width 4)
-(setq-default backward-delete-char-untabify-method nil)
-(setq-default indent-tabs-mode t)
-(setq-default tab-width 4)
 
-; Duplicate line
-(global-set-key (kbd "C-,") 'rc/duplicate-line)
-
-; Multi-Cursors
-(rc/require 'multiple-cursors)
-(global-set-key (kbd "C-M-f")       'mc/edit-lines)
-(global-set-key (kbd "C->")         'mc/mark-next-like-this)
-(global-set-key (kbd "C-<")         'mc/mark-previous-like-this)
-(global-set-key (kbd "C-;")         'mc/mark-all-like-this)
-(global-set-key (kbd "C-\"")        'mc/skip-to-next-like-this)
-(global-set-key (kbd "C-:")         'mc/skip-to-previous-like-this)
-
+(use-package multipler-cursors
+  :ensure t
+  :bind (("C-M-f" . mc/edit-lines)
+		 ("C->"   . mc/mark-next-like-this)
+		 ("C-<"   . mc/mark-previous-like-this)
+		 ("C-;"   . mc/mark-all-like-this)
+		 ("C-\""  . mc/skip-to-next-like-this)
+		 ("C-:"   . mc/skip-to-previous-like-this)))

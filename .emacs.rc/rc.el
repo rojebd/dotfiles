@@ -1,5 +1,10 @@
 (defvar rc/package-refreshed nil)
 
+(defun rc/highlighter (level responsive display)
+  (if (> 1 level)
+      nil
+    (highlight-indent-guides--highlighter-default level responsive display)))
+
 (defun rc/refresh ()
   (unless rc/package-refreshed
     (setq rc/package-refreshed t)
