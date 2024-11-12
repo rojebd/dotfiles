@@ -36,7 +36,7 @@
   (setq highlight-indent-guides-highlighter-function 'rc/highlighter))
 
 
-(use-package multipler-cursors
+(use-package multiple-cursors
   :ensure t
   :bind (("C-M-f" . mc/edit-lines)
 		 ("C->"   . mc/mark-next-like-this)
