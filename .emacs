@@ -5,6 +5,7 @@
 
 ; add common modules to load-pat and load rc
 (add-to-list 'load-path "~/.emacs.rc/")
+
 (require 'rc)
 (require 'move-text)
 (require 'hare-mode)

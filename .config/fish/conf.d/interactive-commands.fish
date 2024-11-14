@@ -8,13 +8,13 @@ if status is-interactive
         cd $dir
     end
 
-    function emacs
-        setsid emacs $argv &
-    end
+    # function emacs
+    #     setsid emacs $argv &
+    # end
     
-    function emacs-dir
-        cd $argv[1]; and setsid emacs $argv[2]; and exit &
-    end
+    # function emacs-dir
+    #     cd $argv[1]; and setsid emacs $argv[2]; and exit &
+    # end
     
     function gt
         git log --graph --decorate --pretty=oneline --abbrev-commit --all $argv

@@ -12,34 +12,16 @@
   (setq-default indent-tabs-mode t)
   (setq-default tab-width 4)
   (setq gc-cons-threshold 100000000)
-  (setq read-process-output-max (* 1024 1024)) ;; 1mb
- )
-
-;; (use-package corfu
-;;   :ensure t
-;;   :init
-;;   (global-corfu-mode)
-;;   :bind (:map corfu-map
-;; 		  ("RET" . nil)
-;; 		  ("S-<return>" . corfu-insert))
-;;   :config
-;;   (setq-default corfu-auto nil))
-
-;; (use-package cape
-;;   :ensure t
-;;   :init
-;;   (add-hook 'completion-at-point-functions #'cape-dabbrev)
-;;   (add-hook 'completion-at-point-functions #'cape-file))
+  (setq read-process-output-max (* 1024 1024)))
 
 (use-package highlight-indent-guides
   :ensure t
   :hook (prog-mode . highlight-indent-guides-mode)
-  :config
-  (setq highlight-indent-guides-method 'character)
-  (setq highlight-indent-guides-auto-character-face-perc 55)
-  (setq highlight-indent-guides-responsive "top")
-  (setq highlight-indent-guides-highlighter-function 'rc/highlighter))
-
+  :custom
+  (highlight-indent-guides-method 'character)
+  (highlight-indent-guides-auto-character-face-perc 55)
+  (highlight-indent-guides-responsive "top")
+  (highlight-indent-guides-highlighter-function 'rc/highlighter))
 
 (use-package multiple-cursors
   :ensure t
@@ -66,38 +48,3 @@ emacs cannot download the grammars
 (setq major-mode-remap-alist
   '((python-mode  . python-ts-mode)
 	(hare-mode    . hare-ts-mode)))
-
-
-(use-package lsp-mode
-  :ensure t
-  :init
-  (setq lsp-keymap-prefix "C-c")
-  :hook ((python-ts-mode . lsp-deferred)
-		 )
-  :commands lsp-deferred
-  :config
-  (setq lsp-idle-delay 0.500)
-  (setq lsp-file-watch-threshold 100)
-  (setq lsp-headerline-breadcrumb-enable nil)
-  (setq lsp-modeline-code-actions-segments '(count))
-  )
-
-(use-package lsp-pyright
-  :ensure t
-  :custom (lsp-pyright-langserver-command "pyright")
-  :hook (python-ts-mode . (lambda ()
-							(require 'lsp-pyright)
-							(lsp-deferred)))
-  :config
-  (setq lsp-pyright-type-checking-mode "basic")
-  )
-
-
-(use-package flycheck
-  :ensure t
-  :hook (after-init . global-flycheck-mode)
-  :config
-  (setq flycheck-indication-mode 'left-fringe)
-  (setq flycheck-highlighting-mode 'symbols)
-  )
-
