@@ -8,6 +8,10 @@ if status is-interactive
         cd $dir
     end
 
+    function glg
+	      git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative $argv
+    end
+
     # function emacs
     #     setsid emacs $argv &
     # end
@@ -18,6 +22,10 @@ if status is-interactive
     
     function gt
         git log --graph --decorate --pretty=oneline --abbrev-commit --all $argv
+    end
+
+    function gb
+	git branch $argv
     end
 
     function gc
