@@ -1,7 +1,7 @@
 modmap:
   - name: main remaps
     remap:
-      CapsLock:
+      CapsLock: # Esc
         held: leftctrl
         alone: esc
         # alone_timeout_millis: 150
