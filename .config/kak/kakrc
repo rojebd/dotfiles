@@ -1,2 +1,5 @@
-colorscheme gruvbox-dark
+colorscheme gruvbox-dark 
+add-highlighter global/ number-lines -relative -hlcursor
+
+
 
