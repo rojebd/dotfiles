@@ -55,9 +55,10 @@ launcher = "tofi-drun --drun-launch=true"
 BORDER_FOCUS = "d3869b"
 BORDER_NORMAL = "83a598"
 NO_BORDER = "00000000"
+BORDER_WIDTH = 2
 
 TAB_BG = "458588"
-TAB_FG = "ffffff"
+TAB_FG = "282828"
 ACTIVE_TAB = BORDER_FOCUS
 URGENT_TAB = "cc241d"
 INACTIVE_TAB = BORDER_NORMAL
@@ -184,16 +185,18 @@ for i in groups:
 layouts = [
     layout.Columns(
         # border_focus_stack=["#d75f5f", "#8f3d3d"],
-        #border_width=3,
+        border_width=BORDER_WIDTH,
         #margin=[10, 4, 10, 4],
         #border_on_single=True,
         #margin_on_single=[10, 4, 10, 4],
+        margin=[0, 0, 0, 0],
+	margin_on_single=[0, 0, 0, 0],
         border_focus=BORDER_FOCUS,
         border_normal=NO_BORDER,
     ),
     Tabbed(
-        #border_width=3,
-        #margin=4,
+        border_width=BORDER_WIDTH,
+        margin=0,
         border_focus=BORDER_FOCUS,
         # The border for a normal window does not matter since
         # we can only see one window at a time
@@ -201,7 +204,8 @@ layouts = [
 
         #border_normal=BORDER_NORMAL,
         #rounded_tabs=True,
-        bar_height=10,
+        bar_height=25,
+        fontsize=13,
         bg_color=TAB_BG,
         active_bg=ACTIVE_TAB,
         urgent_bg=URGENT_TAB,
@@ -249,7 +253,7 @@ def longNameParse(window_name):
 
 screens = [
     Screen(
-        wallpaper="~/.config/qtile/wallpapers/enos-gruvbox-horizontal.png",
+        wallpaper="~/.config/qtile/wallpapers/enos-gruvbox-vertical.png",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
