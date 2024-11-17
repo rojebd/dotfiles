@@ -15,4 +15,4 @@
 [push]
 	autoSetupRemote = true
 [core]
-	editor = kak
+	editor = nvim 
