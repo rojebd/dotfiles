@@ -1,5 +1,0 @@
-colorscheme gruvbox-dark 
-add-highlighter global/ number-lines -relative -hlcursor
-
-set-face global CurSearch PrimarySelection
-add-highlighter global/ dynregex '%reg{/}' 0:CurSearch
