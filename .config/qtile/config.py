@@ -184,23 +184,23 @@ for i in groups:
 layouts = [
     layout.Columns(
         # border_focus_stack=["#d75f5f", "#8f3d3d"],
-        border_width=3,
-        margin=[10, 4, 10, 4],
+        #border_width=3,
+        #margin=[10, 4, 10, 4],
         #border_on_single=True,
-        margin_on_single=[10, 4, 10, 4],
+        #margin_on_single=[10, 4, 10, 4],
         border_focus=BORDER_FOCUS,
         border_normal=NO_BORDER,
     ),
     Tabbed(
-        border_width=3,
-        margin=4,
+        #border_width=3,
+        #margin=4,
         border_focus=BORDER_FOCUS,
         # The border for a normal window does not matter since
         # we can only see one window at a time
         # and all the other ones are tabs
 
         #border_normal=BORDER_NORMAL,
-        rounded_tabs=True,
+        #rounded_tabs=True,
         bar_height=10,
         bg_color=TAB_BG,
         active_bg=ACTIVE_TAB,
@@ -235,17 +235,17 @@ extension_defaults = widget_defaults.copy()
 
 
 # Make long names shorter such as Browsers
-def longNameParse(text):
-    for string in [
-        "Chromium",
-        "Firefox",
-    ]:  # Add any other apps that have long names here
-        if string in text:
+def longNameParse(window_name):
+    for string in ["Chromium","Firefox",]:  # Add any other apps that have long names here
+        if string in window_name:
             text = string
-        else:
-            text = text
-    return text
+            return text
 
+    if len(window_name) >= 57:
+        text = window_name[:57]
+        return text
+
+    return window_name
 
 screens = [
     Screen(
