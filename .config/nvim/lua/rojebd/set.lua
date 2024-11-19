@@ -5,6 +5,9 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.nu = true
 vim.opt.rnu = true
 
+-- 80 column ruler
+vim.opt.colorcolumn = "80"
+
 -- highlight the current line number
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
@@ -20,6 +23,10 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+
+-- indentation settings
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 
 -- No line wrapping
 vim.opt.wrap = false

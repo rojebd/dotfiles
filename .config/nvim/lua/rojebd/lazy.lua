@@ -32,6 +32,12 @@ require("lazy").setup({
 
     -- harpoon
     { "ThePrimeagen/harpoon" },
+
+    -- indent lines
+    { "lukas-reineke/indent-blankline.nvim", main = "ibl"},
+
+    -- lsp
+    { "neovim/nvim-lspconfig" },
   },
 
   -- configure any other settings here. See the documentation for more details.
