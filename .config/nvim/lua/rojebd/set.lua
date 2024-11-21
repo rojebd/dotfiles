@@ -14,8 +14,8 @@ vim.opt.cursorlineopt = "number"
 
 -- Restore terminal cursor to bar
 vim.api.nvim_create_autocmd("VimLeave", {
-  pattern = "*",
-  command = "set guicursor=a:ver25-blinkon0",
+    pattern = "*",
+    command = "set guicursor=a:ver25-blinkon0",
 })
 
 -- use 4 spaces for indentation
@@ -32,11 +32,13 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 --keep search terms highlighted but do use incremental search
-vim.opt.hlsearch = true 
+-- annoying to keep pressing escape to not highlight the matches again so
+-- just disable it
+-- vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- Stop highlighting search terms after I hit esc
-vim.keymap.set("n", "<Esc>", ':noh<Enter>', { silent = true})
+-- vim.keymap.set("n", "<Esc>", ':noh<Enter>', { silent = true })
 
 -- scrolloff and sidescroll
 vim.opt.scrolloff = 8
