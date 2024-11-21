@@ -1,5 +1,8 @@
 local lsp = require("lspconfig")
 
+-- enable inlay_hints
+vim.lsp.inlay_hint.enable()
+
 -- on_attach function
 local on_attach = function(_, bufnr)
     local opts = { buffer = bufnr, remap = false }
@@ -15,26 +18,29 @@ local on_attach = function(_, bufnr)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 
     -- diagnostics mappings
+    vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
+    vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+    vim.keymap.set("n", "df", function() vim.diagnostic.open_float() end, opts)
 end
 
 -- floating windows have border (example doc window)
-local border = {
-    { "🭽", "FloatBorder" },
-    { "▔", "FloatBorder" },
-    { "🭾", "FloatBorder" },
-    { "▕", "FloatBorder" },
-    { "🭿", "FloatBorder" },
-    { "▁", "FloatBorder" },
-    { "🭼", "FloatBorder" },
-    { "▏", "FloatBorder" },
-}
+--local border = {
+--    { "🭽", "FloatBorder" },
+--    { "▔", "FloatBorder" },
+--    { "🭾", "FloatBorder" },
+--    { "▕", "FloatBorder" },
+--    { "🭿", "FloatBorder" },
+--    { "▁", "FloatBorder" },
+--    { "🭼", "FloatBorder" },
+--    { "▏", "FloatBorder" },
+--}
 -- overrides the border globally
-local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
-function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
-    opts = opts or {}
-    opts.border = opts.border or border
-    return orig_util_open_floating_preview(contents, syntax, opts, ...)
-end
+--local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+--function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+--    opts = opts or {}
+--    opts.border = opts.border or border
+--    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+--end
 
 -- lua language server (lua)
 lsp.lua_ls.setup {
