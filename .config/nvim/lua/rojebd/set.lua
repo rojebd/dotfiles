@@ -34,7 +34,7 @@ vim.opt.wrap = false
 --keep search terms highlighted but do use incremental search
 -- annoying to keep pressing escape to not highlight the matches again so
 -- just disable it
--- vim.opt.hlsearch = true
+vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 -- Stop highlighting search terms after I hit esc
@@ -48,3 +48,10 @@ vim.opt.sidescrolloff = 5
 -- set file encoding and the encoding to utf8
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
+
+-- folding
+vim.opt.foldenable = true
+vim.opt.foldlevelstart = 99
+vim.wo.foldcolumn = "1"
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"

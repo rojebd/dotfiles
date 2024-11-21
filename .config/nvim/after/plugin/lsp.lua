@@ -17,6 +17,25 @@ local on_attach = function(_, bufnr)
     -- diagnostics mappings
 end
 
+-- floating windows have border (example doc window)
+local border = {
+    { "🭽", "FloatBorder" },
+    { "▔", "FloatBorder" },
+    { "🭾", "FloatBorder" },
+    { "▕", "FloatBorder" },
+    { "🭿", "FloatBorder" },
+    { "▁", "FloatBorder" },
+    { "🭼", "FloatBorder" },
+    { "▏", "FloatBorder" },
+}
+-- overrides the border globally
+local orig_util_open_floating_preview = vim.lsp.util.open_floating_preview
+function vim.lsp.util.open_floating_preview(contents, syntax, opts, ...)
+    opts = opts or {}
+    opts.border = opts.border or border
+    return orig_util_open_floating_preview(contents, syntax, opts, ...)
+end
+
 -- lua language server (lua)
 lsp.lua_ls.setup {
     on_attach = on_attach,
@@ -80,8 +99,11 @@ lsp.ruff.setup {
 -- auto format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
-    -- if it fails or finds no lsp server to format buffer just silence it
-    command = "silent! lua vim.lsp.buf.format()"
+    -- no need to silence this  since neovim overwrites the output
+    -- with the written file output
+    callback = function()
+        vim.lsp.buf.format()
+    end
 })
 
 -- basedpyright seems to be good at this I don't know about other LSP's tho

@@ -1,6 +1,8 @@
 require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-    ensure_installed = { "hare", "lua", "python" },
+    -- comment is needed to define custom highlight groups for comments see
+    -- below this file for more info
+    ensure_installed = { "comment", "hare", "lua", "python" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -26,12 +28,20 @@ require 'nvim-treesitter.configs'.setup {
         -- Using this option may slow down your editor, and you may see some duplicate highlights.
         -- Instead of true it can also be a list of languages
         additional_vim_regex_highlighting = false,
-        -- Define custom highlighting for TODO, FIXME, NOTE, XXX
-        custom_captures = {
-            ["@comment.error"] = "Indentifier",
-            ["@comment.warning"] = "Indentifier",
-            ["@comment.todo"] = "Indentifier",
-            ["@comment.note"] = "Indentifier",
-        },
     },
 }
+
+-- define custom highlight for hare (highlight ! and ? operators)
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "hare",
+    callback = function()
+        vim.api.nvim_set_hl(0, "@operator", { link = "GruvboxRed", bold = true })
+    end
+})
+
+-- Define custom highlighting for TODO, FIXME, XXX, NOTE:
+-- to all be gruvbox red
+vim.api.nvim_set_hl(0, "@comment.error", { link = "GruvboxRed", bold = true })
+vim.api.nvim_set_hl(0, "@comment.note", { link = "GruvboxRed", bold = true })
+vim.api.nvim_set_hl(0, "@comment.todo", { link = "GruvboxRed", bold = true })
+vim.api.nvim_set_hl(0, "@comment.warning", { link = "GruvboxRed", bold = true })
