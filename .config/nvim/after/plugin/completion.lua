@@ -1,6 +1,14 @@
 local cmp = require("cmp")
 
 cmp.setup({
+    -- set size for documentation window
+    window = {
+        documentation = {
+            max_height = 30,
+            max_width = 20,
+        },
+    },
+    -- for completion window
     formatting = {
         fields = { "abbr", "menu", "kind" },
         format = function(entry, item)
