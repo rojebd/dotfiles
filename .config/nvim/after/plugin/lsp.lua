@@ -1,6 +1,10 @@
 local lsp = require("lspconfig")
 local lsp_status = require("lsp-status")
 
+-- Merge capabilities from cmp_nvim_lsp with capabilities
+local capabilities = vim.tbl_deep_extend("force", require("cmp_nvim_lsp").default_capabilities(), lsp_status
+    .capabilities)
+
 vim.diagnostic.config {
     virtual_text = false,
     underline = true,
@@ -98,7 +102,7 @@ end
 -- lua language server (lua)
 lsp.lua_ls.setup {
     on_attach = on_attach,
-    capabilites = lsp_status.capabilities,
+    capabilites = capabilities,
     settings = {
         Lua = {
             diagnostics = {
@@ -127,13 +131,13 @@ lsp.pylsp.setup {
         client.server_capabilities.hoverProvider = false
         on_attach(client, bufnr)
     end,
-    capabilites = lsp_status.capabilities,
+    capabilites = capabilities,
 }
 
 -- basedpyright (python)
 lsp.basedpyright.setup {
     on_attach = on_attach,
-    capabilites = lsp_status.capabilities,
+    capabilites = capabilities,
     settings = {
         basedpyright = {
             analysis = {
@@ -151,7 +155,7 @@ lsp.basedpyright.setup {
 -- ruff (python)
 lsp.ruff.setup {
     on_attach = on_attach,
-    capabilites = lsp_status.capabilities,
+    capabilites = capabilities,
     init_options = {
         settings = {
             lineLength = 80
