@@ -2,12 +2,12 @@ local cmp = require("cmp")
 
 cmp.setup({
     -- set size for documentation window
-    window = {
-        documentation = {
-            max_height = 30,
-            max_width = 20,
-        },
-    },
+    --window = {
+    --    documentation = {
+    --        max_height = 30,
+    --        --max_width = 20,
+    --    },
+    --},
     -- for completion window
     formatting = {
         fields = { "abbr", "menu", "kind" },
@@ -24,7 +24,7 @@ cmp.setup({
             item.menu = menu_icon[entry.source.name]
 
             -- Set the fixed width of the completion menu to 60 characters.
-            fixed_width = 20
+            fixed_width = 25
 
             -- Set 'fixed_width' to false if not provided.
             fixed_width = fixed_width or false
