@@ -1,10 +1,52 @@
 local lsp = require("lspconfig")
+local lsp_status = require("lsp-status")
+
+lsp_status.config {
+    diagnostics = false,
+    show_filename = false,
+    indicator_errors = 'E',
+    indicator_warnings = 'W',
+    indicator_info = 'i',
+    indicator_hint = '?',
+    indicator_ok = 'Ok',
+    status_symbol = "",
+    kind_labels = {
+        Text          = "[text]",
+        Method        = "[method]",
+        Function      = "[function]",
+        Constructor   = "[constructor]",
+        Field         = "[field]",
+        Variable      = "[variable]",
+        Class         = "[class]",
+        Interface     = "[interface]",
+        Module        = "[module]",
+        Property      = "[property]",
+        Unit          = "[unit]",
+        Value         = "[value]",
+        Enum          = "[enum]",
+        Keyword       = "[keyword]",
+        Snippet       = "[snippet]",
+        Color         = "[color]",
+        File          = "[file]",
+        Reference     = "[reference]",
+        Folder        = "[folder]",
+        EnumMember    = "[enummember]",
+        Constant      = "[constant]",
+        Struct        = "[struct]",
+        Event         = "[event]",
+        Operator      = "[operator]",
+        TypeParameter = "[typeparameter]",
+    },
+}
+
+lsp_status.register_progress()
+
 
 -- enable inlay_hints
 vim.lsp.inlay_hint.enable()
 
 -- on_attach function
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
 
     -- lsp mappings
@@ -21,6 +63,8 @@ local on_attach = function(_, bufnr)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
     vim.keymap.set("n", "df", function() vim.diagnostic.open_float() end, opts)
+
+    lsp_status.on_attach(client)
 end
 
 -- floating windows have border (example doc window)
@@ -45,6 +89,7 @@ end
 -- lua language server (lua)
 lsp.lua_ls.setup {
     on_attach = on_attach,
+    capabilites = lsp_status.capabilities,
     settings = {
         Lua = {
             diagnostics = {
@@ -72,12 +117,14 @@ lsp.pylsp.setup {
     on_attach = function(client, bufnr)
         client.server_capabilities.hoverProvider = false
         on_attach(client, bufnr)
-    end
+    end,
+    capabilites = lsp_status.capabilities,
 }
 
 -- basedpyright (python)
 lsp.basedpyright.setup {
     on_attach = on_attach,
+    capabilites = lsp_status.capabilities,
     settings = {
         basedpyright = {
             analysis = {
@@ -95,6 +142,7 @@ lsp.basedpyright.setup {
 -- ruff (python)
 lsp.ruff.setup {
     on_attach = on_attach,
+    capabilites = lsp_status.capabilities,
     init_options = {
         settings = {
             lineLength = 80

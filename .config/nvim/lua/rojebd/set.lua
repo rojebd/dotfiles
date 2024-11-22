@@ -55,3 +55,9 @@ vim.opt.foldlevelstart = 99
 vim.wo.foldcolumn = "1"
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+
+-- undotree
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undo"
+vim.opt.undofile = true
