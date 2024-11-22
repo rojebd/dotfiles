@@ -64,3 +64,6 @@ vim.opt.undofile = true
 
 -- completion menu settings
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
+
+-- shortmess
+vim.opt.shortmess:append "c"
