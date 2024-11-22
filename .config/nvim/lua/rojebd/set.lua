@@ -61,3 +61,6 @@ vim.opt.swapfile = false
 vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undo"
 vim.opt.undofile = true
+
+-- completion menu settings
+vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
