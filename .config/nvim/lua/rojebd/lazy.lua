@@ -65,6 +65,12 @@ require("lazy").setup({
 
         -- lsp status
         { "nvim-lua/lsp-status.nvim" },
+
+        -- diagnostics at top right
+        {
+            'dgagn/diagflow.nvim',
+            event = 'LspAttach',
+        }
     },
 
     -- configure any other settings here. See the documentation for more details.
