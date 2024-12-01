@@ -158,9 +158,9 @@ lsp.ruff.setup {
     capabilites = capabilities,
     init_options = {
         settings = {
-            lineLength = 80
-        }
-    }
+            lineLength = 80,
+        },
+    },
 }
 
 -- auto format on save
