@@ -76,7 +76,11 @@ keys = [
         "XF86AudioLowerVolume",
         lazy.spawn("wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-"),
     ),
-    Key([], "XF86AudioMute", lazy.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle")),
+    Key(
+        [],
+        "XF86AudioMute",
+        lazy.spawn("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),
+    ),
     Key([], "XF86MonBrightnessUp", lazy.spawn("brightnessctl set +1%")),
     Key([], "XF86MonBrightnessDown", lazy.spawn("brightnessctl set 1%-")),
     # Spawn Browser
@@ -88,11 +92,19 @@ keys = [
     Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
+    Key(
+        [mod],
+        "space",
+        lazy.layout.next(),
+        desc="Move window focus to other window",
+    ),
     # Move windows between left/right columns or move up/down in current stack.
     # Moving out of range in Columns layout will create new column.
     Key(
-        [mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"
+        [mod, "shift"],
+        "h",
+        lazy.layout.shuffle_left(),
+        desc="Move window to the left",
     ),
     Key(
         [mod, "shift"],
@@ -100,15 +112,27 @@ keys = [
         lazy.layout.shuffle_right(),
         desc="Move window to the right",
     ),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
+    Key(
+        [mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"
+    ),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
     # Grow windows. If current window is on the edge of screen and direction
     # will be to screen edge - window would shrink.
-    Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
     Key(
-        [mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"
+        [mod, "control"],
+        "h",
+        lazy.layout.grow_left(),
+        desc="Grow window to the left",
     ),
-    Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
+    Key(
+        [mod, "control"],
+        "l",
+        lazy.layout.grow_right(),
+        desc="Grow window to the right",
+    ),
+    Key(
+        [mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"
+    ),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     # Toggle between split and unsplit sides of stack.
@@ -150,7 +174,9 @@ for vt in range(1, 8):
         Key(
             ["control", "mod1"],
             f"f{vt}",
-            lazy.core.change_vt(vt).when(func=lambda: qtile.core.name == "wayland"),
+            lazy.core.change_vt(vt).when(
+                func=lambda: qtile.core.name == "wayland"
+            ),
             desc=f"Switch to VT{vt}",
         )
     )
@@ -173,7 +199,9 @@ for i in groups:
                 [mod, "shift"],
                 i.name,
                 lazy.window.togroup(i.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(i.name),
+                desc="Switch to & move focused window to group {}".format(
+                    i.name
+                ),
             ),
             # Or, use below if you prefer not to switch to that group.
             # # mod + shift + group number = move focused window to group
@@ -186,11 +214,11 @@ layouts = [
     layout.Columns(
         # border_focus_stack=["#d75f5f", "#8f3d3d"],
         border_width=BORDER_WIDTH,
-        #margin=[10, 4, 10, 4],
-        #border_on_single=True,
-        #margin_on_single=[10, 4, 10, 4],
+        # margin=[10, 4, 10, 4],
+        # border_on_single=True,
+        # margin_on_single=[10, 4, 10, 4],
         margin=[0, 0, 0, 0],
-	margin_on_single=[0, 0, 0, 0],
+        margin_on_single=[0, 0, 0, 0],
         border_focus=BORDER_FOCUS,
         border_normal=NO_BORDER,
     ),
@@ -201,9 +229,8 @@ layouts = [
         # The border for a normal window does not matter since
         # we can only see one window at a time
         # and all the other ones are tabs
-
-        #border_normal=BORDER_NORMAL,
-        #rounded_tabs=True,
+        # border_normal=BORDER_NORMAL,
+        # rounded_tabs=True,
         bar_height=25,
         fontsize=13,
         bg_color=TAB_BG,
@@ -240,7 +267,10 @@ extension_defaults = widget_defaults.copy()
 
 # Make long names shorter such as Browsers
 def longNameParse(window_name):
-    for string in ["Chromium","Firefox",]:  # Add any other apps that have long names here
+    for string in [
+        "Chromium",
+        "Firefox",
+    ]:  # Add any other apps that have long names here
         if string in window_name:
             text = string
             return text
@@ -250,6 +280,7 @@ def longNameParse(window_name):
         return text
 
     return window_name
+
 
 screens = [
     Screen(
@@ -261,7 +292,9 @@ screens = [
                     padding_x=5,
                     rules=[
                         GroupBoxRule(visible=False).when(occupied=False),
-                        GroupBoxRule(block_border_colour="458588").when(focused=True),
+                        GroupBoxRule(block_border_colour="458588").when(
+                            focused=True
+                        ),
                         GroupBoxRule(block_colour="282828").when(focused=True),
                         GroupBoxRule(text_colour="ffffff").when(focused=True),
                         GroupBoxRule(block_corner_radius=3).when(occupied=True),
@@ -269,7 +302,9 @@ screens = [
                 ),
                 widget.Spacer(5),
                 widget.WindowName(parse_text=longNameParse),
-                widget.Volume(mute_format="[ Muted]", unmute_format="[  {volume}%]"),
+                widget.Volume(
+                    mute_format="[ Muted]", unmute_format="[  {volume}%]"
+                ),
                 widget.CPU(format="[CPU  {load_percent}%]"),
                 widget.Memory(
                     measure_mem="G",
@@ -282,7 +317,8 @@ screens = [
                     empty_char="Empty",
                 ),
                 widget.Backlight(
-                    backlight_name="intel_backlight", format="[󰃠 {percent:2.0%}]"
+                    backlight_name="intel_backlight",
+                    format="[󰃠 {percent:2.0%}]",
                 ),
                 widget.Clock(format="[%a %d %b %Y] [ %I:%M %p]"),
                 widget.StatusNotifier(),
@@ -308,7 +344,10 @@ mouse = [
         start=lazy.window.get_position(),
     ),
     Drag(
-        [mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()
+        [mod],
+        "Button3",
+        lazy.window.set_size_floating(),
+        start=lazy.window.get_size(),
     ),
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
