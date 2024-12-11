@@ -8,6 +8,9 @@ vim.opt.rnu = true
 -- 80 column ruler
 vim.opt.colorcolumn = "80"
 
+-- make cursor fat (block)
+vim.opt.guicursor = ""
+
 -- highlight the current line number
 vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
