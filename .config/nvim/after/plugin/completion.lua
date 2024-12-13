@@ -2,12 +2,12 @@ local cmp = require("cmp")
 
 cmp.setup({
     -- set size for documentation window
-    --window = {
-    --    documentation = {
-    --        max_height = 30,
-    --        --max_width = 20,
-    --    },
-    --},
+    window = {
+        documentation = {
+            max_height = 30,
+            max_width = 30,
+        },
+    },
     -- for completion window
     formatting = {
         fields = { "abbr", "menu", "kind" },
@@ -77,5 +77,6 @@ cmp.setup({
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
+        { name = "nvim_lsp_signature_help" },
     })
 })

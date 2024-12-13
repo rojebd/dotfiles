@@ -85,6 +85,9 @@ require("lazy").setup({
                 "saadparwaiz1/cmp_luasnip",
             },
         },
+
+        -- signature help
+        { "hrsh7th/cmp-nvim-lsp-signature-help" }
     },
 
     -- configure any other settings here. See the documentation for more details.
