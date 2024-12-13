@@ -4,8 +4,8 @@ cmp.setup({
     -- set size for documentation window
     window = {
         documentation = {
-            max_height = 30,
-            max_width = 30,
+            max_height = 20,
+            max_width = 55,
         },
     },
     -- for completion window
