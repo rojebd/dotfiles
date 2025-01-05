@@ -75,7 +75,7 @@ local on_attach = function(client, bufnr)
     -- diagnostics mappings
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set("n", "df", function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set("n", "dv", function() vim.diagnostic.open_float() end, opts)
 
     lsp_status.on_attach(client)
 end
@@ -161,6 +161,11 @@ lsp.ruff.setup {
             lineLength = 80,
         },
     },
+}
+
+lsp.clangd.setup {
+    on_attach = on_attach,
+    capabilities = capabilites,
 }
 
 -- auto format on save

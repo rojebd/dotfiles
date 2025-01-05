@@ -2,7 +2,7 @@ require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
     -- comment is needed to define custom highlight groups for comments see
     -- below this file for more info
-    ensure_installed = { "comment", "hare", "lua", "python" },
+    ensure_installed = { "comment", "hare", "lua", "python", "c" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
