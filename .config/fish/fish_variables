@@ -2,7 +2,6 @@
 # VERSION: 3.0
 SETUVAR --export EDITOR:nvim
 SETUVAR --export GPG_SIGN_KEY:\x1d
-SETUVAR --export --path HAREPATH:/usr/src/hare/stdlib\x1e/usr/src/hare/third\x2dparty\x1e/home/roniell/sources/hare\x2draylib
 SETUVAR --export LSP_USE_PLISTS:true
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_upgraded_to_4_4:\x1d
