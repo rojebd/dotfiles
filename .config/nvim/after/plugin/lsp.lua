@@ -75,7 +75,7 @@ local on_attach = function(client, bufnr)
     -- diagnostics mappings
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
-    vim.keymap.set("n", "<Leader>dv", function() vim.diagnostic.open_float() end, opts)
+    vim.keymap.set("n", "<Leader>df", function() vim.diagnostic.open_float() end, opts)
 
     lsp_status.on_attach(client)
 end
