@@ -2,7 +2,7 @@ require 'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the listed parsers MUST always be installed)
     -- comment is needed to define custom highlight groups for comments see
     -- below this file for more info
-    ensure_installed = { "comment", "hare", "lua", "python", "c" },
+    ensure_installed = { "comment", "lua", "python", "c" },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
     sync_install = false,
@@ -32,12 +32,12 @@ require 'nvim-treesitter.configs'.setup {
 }
 
 -- define custom highlight for hare (highlight ! and ? operators)
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "hare",
-    callback = function()
-        vim.api.nvim_set_hl(0, "@operator", { link = "GruvboxRed", bold = true })
-    end
-})
+--vim.api.nvim_create_autocmd("FileType", {
+--    pattern = "hare",
+--    callback = function()
+--        vim.api.nvim_set_hl(0, "@operator", { link = "GruvboxRed", bold = true })
+--    end
+--})
 
 -- Define custom highlighting for TODO, FIXME, XXX, NOTE:
 -- to all be gruvbox red
