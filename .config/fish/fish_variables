@@ -1,7 +1,10 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export --path C_INCLUDE_PATH:/home/roniell/coding/c/llist/include\x1e/home/roniell/coding/c/hashtable/include
 SETUVAR --export EDITOR:nvim
 SETUVAR --export GPG_SIGN_KEY:\x1d
+SETUVAR --export --path LD_LIBRARY_PATH:/home/roniell/coding/c/llist/lib\x1e/home/roniell/coding/c/hashtable/lib
+SETUVAR --export --path LIBRARY_PATH:/home/roniell/coding/c/llist/lib\x1e/home/roniell/coding/c/hashtable/lib
 SETUVAR --export LSP_USE_PLISTS:true
 SETUVAR __fish_initialized:3400
 SETUVAR _fisher_upgraded_to_4_4:\x1d

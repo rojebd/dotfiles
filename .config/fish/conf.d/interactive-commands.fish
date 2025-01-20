@@ -1,5 +1,9 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
+    
+    function neovide
+        /usr/bin/neovide $argv & disown; sleep 0.1; exit
+    end
 
     function venv
         set dir (pwd)
