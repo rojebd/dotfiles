@@ -284,7 +284,7 @@ def longNameParse(window_name):
 
 screens = [
     Screen(
-        wallpaper="~/.config/qtile/wallpapers/enos-gruvbox-vertical.png",
+        wallpaper="~/.config/qtile/wallpapers/background_oxocarbon.png",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
@@ -303,24 +303,24 @@ screens = [
                 widget.Spacer(5),
                 widget.WindowName(parse_text=longNameParse),
                 widget.Volume(
-                    mute_format="[ Muted]", unmute_format="[   {volume}%]"
+                    mute_format="[ Muted]", unmute_format="[  {volume}%]"
                 ),
-                widget.CPU(format="[CPU   {load_percent}%]"),
+                widget.CPU(format="[CPU  {load_percent}%]"),
                 widget.Memory(
                     measure_mem="G",
-                    format="[RAM   {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}]",
+                    format="[RAM  {MemUsed:.0f}{mm}/{MemTotal:.0f}{mm}]",
                 ),
                 widget.Battery(
-                    format="[   {char} {percent:2.0%}]",
+                    format="[ {char} {percent:2.0%}]",
                     charge_char="Charging",
                     discharge_char="Discharging",
                     empty_char="Empty",
                 ),
                 widget.Backlight(
                     backlight_name="intel_backlight",
-                    format="[󰃠  {percent:2.0%}]",
+                    format="[󰃠 {percent:2.0%}]",
                 ),
-                widget.Clock(format="[%a %d %b %Y] [  %I:%M %p]"),
+                widget.Clock(format="[%a %d %b %Y] [ %I:%M %p]"),
                 widget.StatusNotifier(),
             ],
             24,
