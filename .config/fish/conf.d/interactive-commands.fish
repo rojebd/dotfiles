@@ -1,6 +1,10 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     
+    function git-url
+        git remote set-url origin $(git config --get remote.origin.url | sed 's/https:\/\/github.com\//git@github.com:/g' | awk '{print $1".git"}')
+    end
+    
     function neovide
         /usr/bin/neovide $argv & disown; sleep 0.1; exit
     end
