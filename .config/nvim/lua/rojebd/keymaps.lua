@@ -2,6 +2,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- stolen from theprimeagen
+-- https://github.com/ThePrimeagen/init.lua/blob/249f3b14cc517202c80c6babd0f9ec548351ec71/lua/theprimeagen/remap.lua#L22
+vim.keymap.set("x", "<leader>p", [["_dP]])
+
 -- netrw open easily
 vim.keymap.set("n", "<Leader>nr", vim.cmd.Ex)
 
