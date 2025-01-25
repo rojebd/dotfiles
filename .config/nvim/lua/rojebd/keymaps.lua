@@ -6,10 +6,6 @@ vim.g.maplocalleader = "\\"
 -- https://github.com/ThePrimeagen/init.lua/blob/249f3b14cc517202c80c6babd0f9ec548351ec71/lua/theprimeagen/remap.lua#L22
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
--- I do not know what the one below is used for.
---vim.keymap.set("n", "<leader>Y", [["+Y]])
-
 -- netrw open easily
 vim.keymap.set("n", "<Leader>nr", vim.cmd.Ex)
 

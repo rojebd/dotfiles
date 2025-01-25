@@ -1,5 +1,5 @@
 -- use system clipboard
---vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus"
 
 -- line number and relative line number
 vim.opt.nu = true
