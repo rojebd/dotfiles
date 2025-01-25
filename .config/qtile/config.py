@@ -324,7 +324,7 @@ screens = [
                 widget.StatusNotifier(),
             ],
             24,
-            background="3c3836",
+            background="232323",
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
