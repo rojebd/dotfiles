@@ -47,7 +47,7 @@ def startup():
     Popen(expanduser("~/.config/qtile/startup.sh"))
 
 
-mod = "mod1"
+mod = "mod4"
 terminal = "ghostty"
 browser = "firefox"
 launcher = "tofi-drun --drun-launch=true"
