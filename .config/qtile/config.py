@@ -315,6 +315,7 @@ screens = [
                     charge_char="Charging",
                     discharge_char="Discharging",
                     empty_char="Empty",
+                    low_percentage=0.15,
                 ),
                 widget.Backlight(
                     backlight_name="intel_backlight",
