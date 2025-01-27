@@ -20,7 +20,8 @@ require("lazy").setup({
     spec = {
         -- colorscheme
         {
-            "nyoom-engineering/oxocarbon.nvim",
+            "miikanissi/modus-themes.nvim",
+            priority = 1000,
         },
 
         -- treesitter

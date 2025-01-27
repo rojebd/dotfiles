@@ -6,7 +6,7 @@ end
 require("lualine").setup {
     options = {
         icons_enabled = false,
-        theme = "gruvbox_dark",
+        -- theme = "gruvbox_dark",
     },
     sections = { lualine_x = { 'encoding', 'fileformat', 'filetype', lsp_status }, }
 }
