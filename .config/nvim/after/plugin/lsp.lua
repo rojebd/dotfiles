@@ -124,15 +124,17 @@ lsp.lua_ls.setup {
     },
 }
 
+-- I do not use pylsp anymore since basedpyright + ruff has all of its features
+-- plus more such as type checking so its unecessary.
 -- use basedpyright lsp hover doc function instead of pylsp
 -- pylsp (python)
-lsp.pylsp.setup {
-    on_attach = function(client, bufnr)
-        client.server_capabilities.hoverProvider = false
-        on_attach(client, bufnr)
-    end,
-    capabilites = capabilities,
-}
+-- lsp.pylsp.setup {
+--     on_attach = function(client, bufnr)
+--         client.server_capabilities.hoverProvider = false
+--         on_attach(client, bufnr)
+--     end,
+--     capabilites = capabilities,
+-- }
 
 -- basedpyright (python)
 lsp.basedpyright.setup {
