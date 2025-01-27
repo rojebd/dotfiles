@@ -1,4 +1,4 @@
-theme = Oxocarbon 
+theme = modus-vivendi
 command = /usr/bin/fish --login --interactive
 font-family = JetBrains Mono Nerd Font
 font-size = 14
