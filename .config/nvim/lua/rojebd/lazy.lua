@@ -39,8 +39,8 @@ require("lazy").setup({
         -- lualine
         { "nvim-lualine/lualine.nvim" },
 
-        -- harpoon
-        { "ThePrimeagen/harpoon" },
+        -- -- harpoon
+        -- { "ThePrimeagen/harpoon" },
 
         -- indent lines
         { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
