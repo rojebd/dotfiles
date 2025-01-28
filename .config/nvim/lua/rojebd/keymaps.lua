@@ -27,7 +27,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- quickfix and location list navigation
-vim.keymap.set("n", "<C-s>", "<cmd>cnext<CR>zz")
-vim.keymap.set("n", "<C-a>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "<C-c>", "<cmd>copen<CR>zz")
+vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
+vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>s", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>a", "<cmd>lprev<CR>zz")
