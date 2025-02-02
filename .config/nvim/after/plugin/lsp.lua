@@ -100,29 +100,29 @@ end
 --end
 
 -- lua language server (lua)
-lsp.lua_ls.setup {
-    on_attach = on_attach,
-    capabilites = capabilities,
-    settings = {
-        Lua = {
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = {
-                    'vim',
-                    'require'
-                },
-            },
-            workspace = {
-                -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
-            },
-            -- Do not send telemetry data containing a randomized but unique identifier
-            telemetry = {
-                enable = false,
-            },
-        },
-    },
-}
+--lsp.lua_ls.setup {
+--    on_attach = on_attach,
+--    capabilites = capabilities,
+--    settings = {
+--        Lua = {
+--            diagnostics = {
+--                -- Get the language server to recognize the `vim` global
+--                globals = {
+--                    'vim',
+--                    'require'
+--                },
+--            },
+--            workspace = {
+--                -- Make the server aware of Neovim runtime files
+--                library = vim.api.nvim_get_runtime_file("", true),
+--            },
+--            -- Do not send telemetry data containing a randomized but unique identifier
+--            telemetry = {
+--                enable = false,
+--            },
+--        },
+--    },
+--}
 
 -- I do not use pylsp anymore since basedpyright + ruff has all of its features
 -- plus more such as type checking so its unecessary.
