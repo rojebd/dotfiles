@@ -48,7 +48,7 @@ def startup():
 
 
 mod = "mod1"
-terminal = "ghostty"
+terminal = "foot"
 browser = "firefox"
 launcher = "tofi-drun --drun-launch=true"
 
