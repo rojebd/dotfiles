@@ -46,7 +46,7 @@ require("lazy").setup({
         { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 
         -- lsp
-        { "neovim/nvim-lspconfig" },
+        --{ "neovim/nvim-lspconfig" },
 
         -- autopairs
         {
@@ -61,13 +61,13 @@ require("lazy").setup({
         { "mbbill/undotree" },
 
         -- lsp status
-        { "nvim-lua/lsp-status.nvim" },
+        --{ "nvim-lua/lsp-status.nvim" },
 
         -- diagnostics at top right
-        {
-            "dgagn/diagflow.nvim",
-            event = 'LspAttach',
-        },
+        --{
+        --    "dgagn/diagflow.nvim",
+        --    event = 'LspAttach',
+        --},
 
         -- snippets
         { "L3MON4D3/LuaSnip" },
@@ -84,12 +84,12 @@ require("lazy").setup({
         },
 
         -- signature help
-        { "hrsh7th/cmp-nvim-lsp-signature-help" }
+        --{ "hrsh7th/cmp-nvim-lsp-signature-help" }
     },
 
     -- configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
-    install = { colorscheme = { "gruvbox" } },
+    --install = { colorscheme = { "gruvbox" } },
 
     -- automatically check for plugin updates
     checker = { enabled = false },

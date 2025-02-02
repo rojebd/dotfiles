@@ -1,1 +1,1 @@
-require('diagflow').setup()
+--require('diagflow').setup()
