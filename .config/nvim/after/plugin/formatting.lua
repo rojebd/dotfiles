@@ -3,6 +3,7 @@ local conform = require("conform")
 conform.setup({
   formatters_by_ft = {
     c = { "clang-format" },
+    cs = { "dotnet-format" },
   },
   format_on_save = {
       timeout_ms = 500,
