@@ -1,6 +1,9 @@
 -- use system clipboard
 vim.opt.clipboard = "unnamedplus"
 
+-- set formatexpr to use conform.nvim
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
 -- line number and relative line number
 vim.opt.nu = true
 vim.opt.rnu = true

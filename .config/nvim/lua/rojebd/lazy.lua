@@ -47,6 +47,9 @@ require("lazy").setup({
 
         -- lsp
         --{ "neovim/nvim-lspconfig" },
+        
+        -- formatting
+        { "stevearc/conform.nvim" };
 
         -- autopairs
         {

@@ -1,13 +1,15 @@
--- For C (clang-format)
-local function format_and_save_c()
-    local filetype = vim.bo.filetype
-    if filetype == "c" or filetype == "cpp" then
-        vim.cmd('silent !clang-format -i --style=file:/home/roniell/coding/c/scripts-and-stuff/clang-format-global %')
-        vim.cmd("checktime")
-    end
-end
+local conform = require("conform")
 
-vim.api.nvim_create_autocmd('BufWritePost', {
-  pattern = '*.c,*.cpp',
-  callback = format_and_save_c,
+conform.setup({
+  formatters_by_ft = {
+    c = { "clang-format" },
+  },
+  format_on_save = {
+      timeout_ms = 500,
+      lsp_format = "fallback",
+  },
 })
+
+conform.formatters.clang_format = {
+    prepend_args = { "--style=file" },
+}
