@@ -73,3 +73,8 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- shortmess
 vim.opt.shortmess:append "c"
+
+-- Neovide settings
+-- To make font not look so thick compared to terminal nvim
+vim.g.neovide_text_gamma = 0.8
+vim.g.neovide_text_contrast = 0.1
