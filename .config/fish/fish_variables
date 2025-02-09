@@ -1,6 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR --export --path C_INCLUDE_PATH:/home/roniell/coding/c/llist/include\x1e/home/roniell/coding/c/hashtable/include\x1e/home/roniell/coding/c/array_int/include
+SETUVAR --export DOTNET_CLI_TELEMETRY_OPTOUT:1
 SETUVAR --export EDITOR:nvim
 SETUVAR --export GPG_SIGN_KEY:\x1d
 SETUVAR --export --path LD_LIBRARY_PATH:/home/roniell/coding/c/llist/lib\x1e/home/roniell/coding/c/hashtable/lib\x1e/home/roniell/coding/c/array_int/lib
