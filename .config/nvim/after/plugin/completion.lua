@@ -16,7 +16,7 @@ cmp.setup({
             local menu_icon = {
                 --nvim_lsp = "LSP",
                 nvim_lua = "LUA",
-                luasnip  = "SNP",
+                -- luasnip  = "SNP",
                 buffer   = "BUFF",
                 path     = "PATH",
             }
@@ -56,11 +56,11 @@ cmp.setup({
             return item
         end,
     },
-    snippet = {
-        expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-        end
-    },
+    -- snippet = {
+    --     expand = function(args)
+    --         require("luasnip").lsp_expand(args.body)
+    --     end
+    -- },
     mapping = cmp.mapping.preset.insert({
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
@@ -74,7 +74,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         --{ name = "nvim_lsp" },
-        { name = "luasnip" },
+        --{ name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
         --{ name = "nvim_lsp_signature_help" },
