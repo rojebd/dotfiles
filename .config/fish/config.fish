@@ -15,11 +15,4 @@ set -Ux LD_LIBRARY_PATH "$CODE/llist/lib:$CODE/hashtable/lib:$CODE/array_int/lib
 #alias find="fd $argv"
 #alias sed="sd $argv"
 
-# dotnet autocomplete
-complete -f -c dotnet -a "(dotnet complete (commandline -cp))"
-
-# Disable dotnet cli telemetry
-set -Ux DOTNET_CLI_TELEMETRY_OPTOUT 1
-
 fish_add_path /home/roniell/.local/bin
-fish_add_path /home/roniell/.dotnet/tools
