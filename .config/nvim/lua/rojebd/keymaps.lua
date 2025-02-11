@@ -10,12 +10,8 @@ vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("n", "<Leader>nr", vim.cmd.Ex)
 
 -- buffer next and previous
---vim.keymap.set("n", "<Leader>h", vim.cmd.bprevious)
---vim.keymap.set("n", "<Leader>l", vim.cmd.bnext)
-
--- tab next and previous
-vim.keymap.set("n", "<Leader>h", vim.cmd.tabprevious)
-vim.keymap.set("n", "<Leader>l", vim.cmd.tabnext)
+vim.keymap.set("n", "<Leader>h", vim.cmd.bprevious)
+vim.keymap.set("n", "<Leader>l", vim.cmd.bnext)
 
 -- delete/close current buffer
 vim.keymap.set("n", "<Leader>bd", vim.cmd.bdelete)
