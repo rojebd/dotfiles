@@ -23,6 +23,17 @@ require("lazy").setup({
             "nyoom-engineering/oxocarbon.nvim",
         },
 
+        -- bufferline
+        {
+            "akinsho/bufferline.nvim", 
+            version = "*", 
+        },
+
+        -- scope buffers
+        { 
+            "tiagovla/scope.nvim", 
+        },
+
         -- treesitter
         --{
         --    "nvim-treesitter/nvim-treesitter",
