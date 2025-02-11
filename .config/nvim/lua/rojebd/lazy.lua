@@ -29,6 +29,11 @@ require("lazy").setup({
             version = "*", 
         },
 
+        -- tags
+        {
+            "ludovicchabant/vim-gutentags",
+        },
+
         -- scope buffers
         { 
             "tiagovla/scope.nvim", 
