@@ -1,4 +1,5 @@
-local builtin = require('telescope.builtin')
+local builtin = require("telescope.builtin")
+local actions = require("telescope.actions")
 
 local function find_files()
     builtin.find_files({
@@ -36,9 +37,13 @@ vim.keymap.set('n', '<leader>fG', find_git_files, { desc = 'Telescope git find f
 --end)
 --vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
-
 require("telescope").setup {
     defaults = {
-        file_ignore_patterns = { "stuff", "dist", "lib", "__pycache__", "%.o", "%.hi" }
-    }
+        file_ignore_patterns = { "stuff", "dist", "lib", "__pycache__", "%.o", "%.hi" },
+        mappings = {
+            i = {
+                ["<CR>"] = actions.file_tab,
+            },
+        },
+    },
 }
