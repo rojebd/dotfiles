@@ -64,6 +64,10 @@ if status is-interactive
         git status $argv
     end
 
+    function gst
+        git stash $argv
+    end
+
     function gsh
         git show $argv
     end
