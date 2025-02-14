@@ -33,10 +33,3 @@ vim.keymap.set("n", "<C-n>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-p>", "<cmd>cprev<CR>zz")
 --vim.keymap.set("n", "<leader>s", "<cmd>lnext<CR>zz")
 --vim.keymap.set("n", "<leader>a", "<cmd>lprev<CR>zz")
-
--- tag keybinds
-vim.keymap.set("n", "<Leader>gd", "g]")
-vim.keymap.set("n", "[d", vim.cmd.tn)
-vim.keymap.set("n", "]d", vim.cmd.tp)
-vim.keymap.set("n", "<Leader>rf", "<ESC>viwy:tselect <C-R>0<CR>")
--- Ctrl-t to jump back up the tag stack (go back?)

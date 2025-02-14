@@ -29,21 +29,16 @@ require("lazy").setup({
             version = "*", 
         },
 
-        -- tags
-        {
-            "ludovicchabant/vim-gutentags",
-        },
-
         -- scope buffers
         { 
             "tiagovla/scope.nvim", 
         },
 
         -- treesitter
-        --{
-        --    "nvim-treesitter/nvim-treesitter",
-        --    build = ":TSUpdate"
-        --},
+        {
+            "nvim-treesitter/nvim-treesitter",
+            build = ":TSUpdate"
+        },
 
         -- Fuzzy finder
         {
@@ -62,7 +57,7 @@ require("lazy").setup({
         { "lukas-reineke/indent-blankline.nvim", main = "ibl" },
 
         -- lsp
-        --{ "neovim/nvim-lspconfig" },
+        { "neovim/nvim-lspconfig" },
         
         -- formatting
         { "stevearc/conform.nvim" };
@@ -83,10 +78,10 @@ require("lazy").setup({
         --{ "nvim-lua/lsp-status.nvim" },
 
         -- diagnostics at top right
-        --{
-        --    "dgagn/diagflow.nvim",
-        --    event = 'LspAttach',
-        --},
+        {
+            "dgagn/diagflow.nvim",
+            event = 'LspAttach',
+        },
 
         -- snippets
         -- { "L3MON4D3/LuaSnip" },
@@ -95,7 +90,7 @@ require("lazy").setup({
         {
             "hrsh7th/nvim-cmp",
             dependencies = {
-                -- "hrsh7th/cmp-nvim-lsp",
+                "hrsh7th/cmp-nvim-lsp",
                 "hrsh7th/cmp-buffer",
                 "hrsh7th/cmp-path",
                 -- "saadparwaiz1/cmp_luasnip",

@@ -14,7 +14,7 @@ cmp.setup({
         format = function(entry, item)
             -- Define menu shorthand for different completion sources.
             local menu_icon = {
-                --nvim_lsp = "LSP",
+                nvim_lsp = "LSP",
                 nvim_lua = "LUA",
                 -- luasnip  = "SNP",
                 buffer   = "BUFF",
@@ -73,7 +73,7 @@ cmp.setup({
         ['<S-Tab>'] = nil,
     }),
     sources = cmp.config.sources({
-        --{ name = "nvim_lsp" },
+        { name = "nvim_lsp" },
         --{ name = "luasnip" },
         { 
             name = "buffer",
