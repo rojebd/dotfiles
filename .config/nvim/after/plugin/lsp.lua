@@ -126,32 +126,32 @@ end
 
 
 --- basedpyright (python)
-lsp.basedpyright.setup {
-    on_attach = on_attach,
-    capabilites = capabilities,
-    settings = {
-        basedpyright = {
-            analysis = {
-                typeCheckingMode = "basic",
-                -- NOTE: We do not need reportUnknownMemberType to false
-                -- since typeCheckingMode set to basic does not report it
-                -- as an error
-                reportUnknownMemberType = false,
-            },
-        },
-    },
-}
+--lsp.basedpyright.setup {
+--    on_attach = on_attach,
+--    capabilites = capabilities,
+--    settings = {
+--        basedpyright = {
+--            analysis = {
+--                typeCheckingMode = "basic",
+--                -- NOTE: We do not need reportUnknownMemberType to false
+--                -- since typeCheckingMode set to basic does not report it
+--                -- as an error
+--                reportUnknownMemberType = false,
+--            },
+--        },
+--    },
+--}
 
 --- ruff (python)
-lsp.ruff.setup {
-    on_attach = on_attach,
-    capabilites = capabilities,
-    init_options = {
-        settings = {
-            lineLength = 80,
-        },
-    },
-}
+--lsp.ruff.setup {
+--    on_attach = on_attach,
+--    capabilites = capabilities,
+--    init_options = {
+--        settings = {
+--            lineLength = 80,
+--        },
+--    },
+--}
 
 --lsp.clangd.setup {
 --    on_attach = on_attach,
