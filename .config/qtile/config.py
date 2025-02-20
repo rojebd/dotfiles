@@ -322,7 +322,9 @@ screens = [
                     format="[󰃠 {percent:2.0%}]",
                 ),
                 widget.Clock(format="[%a %d %b %Y] [ %I:%M %p]"),
-                widget.StatusNotifier(),
+                # For some reason getting import error so I just
+                # disabled this widget
+                # widget.StatusNotifier(),
             ],
             24,
             background="232323",
