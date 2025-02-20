@@ -153,10 +153,11 @@ end
 --    },
 --}
 
---lsp.clangd.setup {
---    on_attach = on_attach,
---    capabilities = capabilites,
---}
+-- clangd (c)
+lsp.clangd.setup {
+    on_attach = on_attach,
+    capabilities = capabilites,
+}
 
 
 
