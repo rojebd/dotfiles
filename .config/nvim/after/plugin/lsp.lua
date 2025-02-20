@@ -124,54 +124,39 @@ end
 --    },
 --}
 
----- basedpyright (python)
---lsp.basedpyright.setup {
---    on_attach = on_attach,
---    capabilites = capabilities,
---    settings = {
---        Lua = {
---            diagnostics = {
---                -- Get the language server to recognize the `vim` global
---                globals = {
---                    'vim',
---                    'require'
---                },
---            },
---            workspace = {
---                -- Make the server aware of Neovim runtime files
---                library = vim.api.nvim_get_runtime_file("", true),
---            },
---            -- Do not send telemetry data containing a randomized but unique identifier
---            telemetry = {
---                enable = false,
---        basedpyright = {
---            analysis = {
---                typeCheckingMode = "basic",
---
---                -- NOTE: We do not need reportUnknownMemberType to false
---                -- since typeCheckingMode set to basic does not report it
---                -- as an error
---                reportUnknownMemberType = false,
---            },
---        },
---    },
---}
+
+--- basedpyright (python)
+lsp.basedpyright.setup {
+    on_attach = on_attach,
+    capabilites = capabilities,
+    settings = {
+        basedpyright = {
+            analysis = {
+                typeCheckingMode = "basic",
+                -- NOTE: We do not need reportUnknownMemberType to false
+                -- since typeCheckingMode set to basic does not report it
+                -- as an error
+                reportUnknownMemberType = false,
+            },
+        },
+    },
+}
 
 --- ruff (python)
----lsp.ruff.setup {
----    on_attach = on_attach,
----    capabilites = capabilities,
----    init_options = {
----        settings = {
----            lineLength = 80,
----        },
----    },
----}
-
-lsp.clangd.setup {
+lsp.ruff.setup {
     on_attach = on_attach,
-    capabilities = capabilites,
+    capabilites = capabilities,
+    init_options = {
+        settings = {
+            lineLength = 80,
+        },
+    },
 }
+
+--lsp.clangd.setup {
+--    on_attach = on_attach,
+--    capabilities = capabilites,
+--}
 
 
 
