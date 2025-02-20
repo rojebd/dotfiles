@@ -154,10 +154,10 @@ end
 --}
 
 -- clangd (c)
-lsp.clangd.setup {
-    on_attach = on_attach,
-    capabilities = capabilites,
-}
+--lsp.clangd.setup {
+--    on_attach = on_attach,
+--    capabilities = capabilites,
+--}
 
 
 
