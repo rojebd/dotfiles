@@ -35,13 +35,13 @@ require 'nvim-treesitter.configs'.setup {
 --vim.api.nvim_create_autocmd("FileType", {
 --    pattern = "hare",
 --    callback = function()
---        vim.api.nvim_set_hl(0, "@operator", { link = "GruvboxRed", bold = true })
+--        vim.api.nvim_set_hl(0, "@operator", { link = "ErrorMsg", bold = true })
 --    end
 --})
 
 -- Define custom highlighting for TODO, FIXME, XXX, NOTE:
 -- to all be gruvbox red
-vim.api.nvim_set_hl(0, "@comment.error", { link = "GruvboxRed", bold = true })
-vim.api.nvim_set_hl(0, "@comment.note", { link = "GruvboxRed", bold = true })
-vim.api.nvim_set_hl(0, "@comment.todo", { link = "GruvboxRed", bold = true })
-vim.api.nvim_set_hl(0, "@comment.warning", { link = "GruvboxRed", bold = true })
+vim.api.nvim_set_hl(0, "@comment.error", { link = "ErrorMsg", bold = true })
+vim.api.nvim_set_hl(0, "@comment.note", { link = "ErrorMsg", bold = true })
+vim.api.nvim_set_hl(0, "@comment.todo", { link = "ErrorMsg", bold = true })
+vim.api.nvim_set_hl(0, "@comment.warning", { link = "ErrorMsg", bold = true })
