@@ -5,3 +5,4 @@ tags
 .config/emacs/elpa
 .config/emacs/ido.last
 .config/emacs/smex-items
+.config/emacs/tree-sitter
