@@ -5,6 +5,11 @@ set -U autovenv_announce yes
 
 #set -x HAREPATH /usr/src/hare/stdlib:/usr/src/hare/third-party:/home/roniell/sources/hare-raylib
 
+# Note for some reason I have to explicitly set this so emacs can detect it
+# even though I can do echo $XDG_CONFIG_HOME without this and it exists
+# so I don't know what is going on.
+set -gx XDG_CONFIG_HOME /home/roniell/.config
+
 set -x EDITOR nvim
 set -l CODE "/home/roniell/coding/c"
 set -Ux C_INCLUDE_PATH  "$CODE/llist/include:$CODE/hashtable/include:$CODE/array_int/include"
