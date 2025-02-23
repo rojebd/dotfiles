@@ -1,3 +1,7 @@
 .config/kak/autoload/system-autoload
 .config/qtile/__pycache__
 tags
+.config/emacs/eln-cache
+.config/emacs/elpa
+.config/emacs/ido.last
+.config/emacs/smex-items
