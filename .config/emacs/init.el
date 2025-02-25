@@ -94,8 +94,10 @@
 
 ; Company
 (use-package company
+    :ensure t
     :init (global-company-mode)
-    :ensure t)
+    :config
+    (add-hook 'after-init-hook 'global-company-mode))
 
 (load-file "/usr/share/clang/clang-format.el")
 (require 'clang-format)
