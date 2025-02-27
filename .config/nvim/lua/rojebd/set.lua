@@ -77,8 +77,8 @@ vim.opt.shortmess:append "c"
 
 -- Neovide settings
 -- To make font not look so thick compared to terminal nvim
-vim.g.neovide_text_gamma = 0.8
-vim.g.neovide_text_contrast = 0.1
+--vim.g.neovide_text_gamma = 0.8
+--vim.g.neovide_text_contrast = 0.1
 
 local function custom_delmarks()
     vim.cmd("delmarks A-Z0-9a-z")
