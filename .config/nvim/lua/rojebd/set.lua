@@ -10,7 +10,7 @@ vim.opt.rnu = true
 
 -- 80 column ruler
 vim.opt.colorcolumn = "80"
-vim.opt.textwidth = 80
+--vim.opt.textwidth = 80
 
 -- make cursor fat (block)
 vim.opt.guicursor = "n-v-c-i:block"
