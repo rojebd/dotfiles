@@ -35,7 +35,7 @@ vim.opt.expandtab = true
 --vim.opt.smartindent = true
 
 -- No line wrapping
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 --keep search terms highlighted but do use incremental search
 -- annoying to keep pressing escape to not highlight the matches again so
