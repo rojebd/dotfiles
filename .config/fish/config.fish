@@ -10,7 +10,7 @@ set -U autovenv_announce yes
 # so I don't know what is going on.
 set -gx XDG_CONFIG_HOME /home/roniell/.config
 
-set -x EDITOR nvim
+set -x EDITOR emacs -nw
 set -l CODE "/home/roniell/coding/c"
 set -Ux C_INCLUDE_PATH  "$CODE/llist/include:$CODE/hashtable/include:$CODE/array_int/include"
 set -Ux LIBRARY_PATH    "$CODE/llist/lib:$CODE/hashtable/lib:$CODE/array_int/lib"
