@@ -63,15 +63,13 @@
 ; Tree-Sitter
 ; Treesitter parsers/modes installed: C, Python
 (setq major-mode-remap-alist
-  '((python-mode  . python-ts-mode)
-    (c-mode . c-ts-mode)))
-
+  '(((c-mode . c-ts-mode)))
 
 ; Indent Bars (highlight indent lines)
 (use-package indent-bars
     :ensure t
     ; For both the tree-sitter mode and the normal mode
-    :hook ((python-ts-mode c-ts-mode python-mode c-mode) . indent-bars-mode))
+    :hook ((c-ts-mode c-mode) . indent-bars-mode))
 
 ; Electrir Pair Mode (autopairs)
 (setq-default electric-indent-inhibit nil)
@@ -87,10 +85,10 @@
 (setq tab-width 4)
 (setq c-basic-offset 4)
 (setq c-ts-mode-indent-offset 4)
-(setq python-indent-offset 4)
-(setq python-indent-guess-indent-offset nil)
+;(setq python-indent-offset 4)
+;(setq python-indent-guess-indent-offset nil)
 ;(setq python-indent-guess-indent-offset t)  
-(setq python-indent-guess-indent-offset-verbose nil)
+;(setq python-indent-guess-indent-offset-verbose nil)
 
 ; Company
 (use-package company
