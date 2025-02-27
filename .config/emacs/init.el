@@ -71,10 +71,10 @@
 (use-package indent-bars
     :ensure t
     ; For both the tree-sitter mode and the normal mode
-    :hook ((python-ts-mode c-ts-mode python-mode c-mod) . indent-bars-mode))
+    :hook ((python-ts-mode c-ts-mode python-mode c-mode) . indent-bars-mode))
 
 ; Electrir Pair Mode (autopairs)
-(setq-default electric-indent-inhibit t)
+(setq-default electric-indent-inhibit nil)
 (electric-pair-mode)
 
 ; Disable warnings
@@ -99,12 +99,26 @@
     :config
     (add-hook 'after-init-hook 'global-company-mode))
 
-(load-file "/usr/share/clang/clang-format.el")
-(require 'clang-format)
+; Clang format individually without clangd eglot
+;(load-file "/usr/share/clang/clang-format.el")
+;(require 'clang-format)
 
-(defun clang-format-hook ()
+;(defun clang-format-hook ()
+;  (when (member (file-name-extension buffer-file-name) '("c" "cc" "cxx" "cpp" "h" "hxx" "hpp"))
+;    (add-hook 'before-save-hook 'clang-format-buffer nil t)))
+
+;(add-hook 'c-mode-hook 'clang-format-hook)
+;(add-hook 'c-ts-mode-hook 'clang-format-hook)
+
+; Eglo (LSP)
+(require 'eglot)
+(add-to-list 'eglot-server-programs '((c-mode c-ts-mode) "clangd"))
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c-ts-mode-hook 'eglot-ensure)
+
+(defun eglot-custom-format-hook ()
   (when (member (file-name-extension buffer-file-name) '("c" "cc" "cxx" "cpp" "h" "hxx" "hpp"))
-    (add-hook 'before-save-hook 'clang-format-buffer nil t)))
+    (add-hook 'before-save-hook 'eglot-format-buffer)))
 
-(add-hook 'c-mode-hook 'clang-format-hook)
-(add-hook 'c-ts-mode-hook 'clang-format-hook)
+(add-hook 'c-mode-hook 'eglot-custom-format-hook)
+(add-hook 'c-ts-mode-hook 'eglot-custom-format-hook)
