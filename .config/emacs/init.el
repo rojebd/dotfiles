@@ -63,7 +63,7 @@
 ; Tree-Sitter
 ; Treesitter parsers/modes installed: C, Python
 (setq major-mode-remap-alist
-  '(((c-mode . c-ts-mode)))
+  '((c-mode . c-ts-mode)))
 
 ; Indent Bars (highlight indent lines)
 (use-package indent-bars
