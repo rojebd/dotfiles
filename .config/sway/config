@@ -251,7 +251,7 @@ set $clear #ffffff00
 
 # class                  border   background  text     indicator  child_border
 client.focused_inactive  #333333  #5f676a     #ffffff  #484e50    $clear
-client.unfocused         #333333  #222222     #888888  #292d2e    $clear
-client.focused           #d3869b  $clear      $clear   $clear     #d3869b
+client.unfocused         #d3869b  #232323     #ffffff  #292d2e    $clear
+client.focused           #d3869b  #458588     #232323 $clear     #d3869b
 
 include /etc/sway/config.d/*
