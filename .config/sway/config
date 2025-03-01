@@ -57,6 +57,13 @@ output * bg /home/roniell/.config/wallpapers/background_oxocarbon.png fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+input "type:touchpad" {
+      dwt enabled
+      tap enabled
+      middle_emulation enabled
+      natural_scroll enabled
+}
+
 ### Key bindings
 #
 # Basics:
