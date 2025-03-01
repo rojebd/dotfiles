@@ -284,7 +284,7 @@ def longNameParse(window_name):
 
 screens = [
     Screen(
-        wallpaper="~/.config/qtile/wallpapers/background_oxocarbon.png",
+        wallpaper="~/.config/wallpapers/background_oxocarbon.png",
         wallpaper_mode="fill",
         top=bar.Bar(
             [
