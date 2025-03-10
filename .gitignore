@@ -7,3 +7,4 @@ tags
 .config/emacs/smex-items
 .config/emacs/tree-sitter
 .config/emacs/auto-save-list
+.config/emacs/transient/history.el
