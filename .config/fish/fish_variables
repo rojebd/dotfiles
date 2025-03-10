@@ -8,6 +8,7 @@ SETUVAR --export --path LD_LIBRARY_PATH:/home/roniell/coding/c/llist/lib\x1e/hom
 SETUVAR --export --path LIBRARY_PATH:/home/roniell/coding/c/llist/lib\x1e/home/roniell/coding/c/hashtable/lib\x1e/home/roniell/coding/c/array_int/lib
 SETUVAR --export LSP_USE_PLISTS:true
 SETUVAR --export XDG_CONFIG_HOME:a
+SETUVAR --export _JAVA_AWT_WM_NONREPARENTING:1
 SETUVAR __fish_initialized:3800
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR autovenv_announce:yes
