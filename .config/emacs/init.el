@@ -163,7 +163,7 @@
 (setq dired-listing-switches "-alh")
 (setq dired-mouse-drag-files t)
 
-;; Pinentry for gpg signing
+;; Pinentry for gpg signing (use with magit)
 (use-package pinentry
   :ensure t
   :config
