@@ -177,6 +177,12 @@
   :bind (("C-c g s" . magit-status)
          ("C-c g l" . magit-log)))
 
+;;; Move Text
+(use-package move-text
+  :ensure t
+  :bind (("M-p"  . move-text-up)
+         ("M-n" . move-text-down)))
+
 ;; TODO FOR SOME THINGS THAT I COULD DO BELOW:
 ;; lsp emacs, Clang format, LSP (using LSP or clang-format-hook?), eglot
 ;; and lsp-ui can be used together?
